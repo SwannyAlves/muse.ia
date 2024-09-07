@@ -15,8 +15,8 @@ export const FavoriteButton = ({
   const buttonStyles = useMemo(() => {
     if (label) {
       return isFavorite
-        ? "bg-[#404040] text-white hover:bg-none"
-        : "bg-[#262626] text-white hover:bg-[#333333]"
+        ? "bg-[#404040] text-white hover:bg-none  px-6 py-2 "
+        : "bg-[#262626] text-white hover:bg-[#333333]  px-6 py-2 "
     }
     return "text-white"
   }, [isFavorite, label])
@@ -32,7 +32,7 @@ export const FavoriteButton = ({
 
   return (
     <button
-      className={`flex items-center gap-2 rounded-full px-6 py-2 ${buttonStyles} transition-colors duration-100`}
+      className={`flex items-center gap-2 rounded-full ${buttonStyles} transition-colors duration-100`}
       onClick={onClick}
     >
       <HeartIcon fill={iconFill} stroke={iconStroke} />
