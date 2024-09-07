@@ -5,13 +5,13 @@
 @layer base {
   @font-face {
     font-family: "Articulat";
-    src: url("/assets/fonts/ArticulatCF-Medium.otf");
+    src: url("/public/assets/fonts/ArticulatCF-Medium.otf");
     font-weight: 600;
   }
 
   @font-face {
     font-family: "Articulat";
-    src: url("/assets/fonts/ArticulatCF-Normal.otf");
+    src: url("/public/assets/fonts/ArticulatCF-Normal.otf");
     font-weight: 500;
   }
 
