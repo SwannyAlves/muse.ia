@@ -6,71 +6,29 @@ import { Header } from "@/components/Header/Header"
 import { TextInput } from "@/components/TextInput/TextInput"
 import { Toggle } from "@/components/Toggle/Toggle"
 import { useFavorites } from "@/context/FavoritesSongsContext"
-import { useSongs } from "@/hooks/useSongs"
+import { useMusicLibrary } from "@/hooks/useMusicLibrary "
 import { useRouter } from "next/navigation"
 import { useCallback, useMemo, useState } from "react"
 
 export default function Home() {
   const router = useRouter()
   const { favoritesSongs, toggleFavoriteSongs } = useFavorites()
-  const { songs, isLoading, error } = useSongs()
 
-  const [searchValue, setSearchValue] = useState("")
-  const [seeFavoriteSongs, setSeeFavoriteSongs] = useState(false)
-  const [changeOrder, setChangeOrder] = useState(false)
-
-  const songsList = useMemo(() => {
-    if (!songs || !songs.songs) return []
-    if (seeFavoriteSongs) {
-      return songs.songs.filter((songs) => favoritesSongs.includes(songs.id))
-    }
-    if (changeOrder) {
-      const sortedSongs = [...songs.songs]
-      return sortedSongs.sort((a, b) => {
-        if (a.song.title > b.song.title) {
-          return 1
-        }
-        if (a.song.title < b.song.title) {
-          return -1
-        }
-        return 0
-      })
-    }
-    return songs.songs
-  }, [songs, seeFavoriteSongs, favoritesSongs, changeOrder])
-
-  const suggestsList = useMemo(() => {
-    if (!songs || !songs.songs) return []
-    return songs.songs
-      .map((song) => song.song.title)
-      .concat(songs.songs.map((song) => song.song.artist))
-  }, [songs])
+  const {
+    songsList,
+    suggestsList,
+    seeFavoriteSongs,
+    changeOrder,
+    searchValue,
+    handleSearch,
+    handleEnterPress,
+    handleOrder,
+    setSeeFavoriteSongs,
+  } = useMusicLibrary()
 
   const handleSeeFavorite = useCallback(() => {
     setSeeFavoriteSongs((prevState) => !prevState)
-  }, [])
-
-  const handleSearch = useCallback((value: string) => {
-    setSearchValue(value)
-  }, [])
-
-  const handleEnterPress = useCallback(
-    (value: string) => {
-      const songSelected = songsList.find((song) => {
-        return song.song.title === value || song.song.artist === value
-      })
-      if (songSelected) {
-        router.push(`/song/${songSelected.id}`)
-      } else {
-        router.push(`/song/${value}`)
-      }
-    },
-    [songsList, router]
-  )
-
-  const handleOrder = useCallback(() => {
-    setChangeOrder((prevState) => !prevState)
-  }, [])
+  }, [setSeeFavoriteSongs])
 
   const handleFavoriteClick = (id: number) => {
     return (e: React.MouseEvent) => {
@@ -117,7 +75,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
         <div className="max-w-[1152px] w-full flex flex-wrap gap-x-[33px] gap-y-[34px] items-center justify-center xl:justify-start">
           {songsList.map((song) => (
             <Card
