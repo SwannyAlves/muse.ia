@@ -1,5 +1,25 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import { FavoritesProvider } from "@/context/FavoritesSongsContext"
+import localFont from "next/font/local"
+import { Header } from "@/components/Header/Header"
+import { TextInput } from "@/components/TextInput/TextInput"
+
+const articulat = localFont({
+  src: [
+    {
+      path: "../../public/assets/fonts/ArticulatCF-Medium.otf",
+      weight: "600",
+      style: "semibold",
+    },
+    {
+      path: "../../public/assets/fonts/ArticulatCF-Normal.otf",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  variable: "--font-articular",
+})
 
 export const metadata: Metadata = {
   title: "MUSE.is",
@@ -13,7 +33,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={"bg-zinc-900 text-zinc-200"}>{children}</body>
+      <body className={`${articulat.className} bg-[#0C0C0C] `}>
+        <FavoritesProvider>
+          <Header />
+          {children}
+        </FavoritesProvider>
+      </body>
     </html>
   )
 }
