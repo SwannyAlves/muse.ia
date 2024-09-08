@@ -24,8 +24,10 @@ export const Toggle = ({ label, isActive, onToggle }: ToggleProps) => {
   )
 
   return (
-    <div className="flex items-center gap-[11px]">
-      {label && <span className="font-[600] text-[14px]">{label}</span>}
+    <div className="flex items-center gap-[11px] w-full justify-end">
+      {label && (
+        <span className="font-[600] text-[14px] text-white">{label}</span>
+      )}
       <button type="button" className={toggleClasses} onClick={onToggle}>
         <span className={circleClasses} />
       </button>
