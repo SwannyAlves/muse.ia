@@ -14,3 +14,7 @@ export interface Songs {
     }
   }
 }
+
+export interface FetchSongsResponse {
+  songs: Songs[]
+}

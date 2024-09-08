@@ -1,10 +1,10 @@
 import { fetchSongs } from "@/services/fetchSongs"
-import { Songs } from "@/types/Songs"
+import { FetchSongsResponse } from "@/types/Songs"
 import { useEffect, useState } from "react"
 
 export const useSongs = () => {
   const [isLoading, setIsLoading] = useState(true)
-  const [songs, setSongs] = useState<Songs>()
+  const [songs, setSongs] = useState<FetchSongsResponse>()
   const [error, setError] = useState<Error>()
 
   useEffect(() => {
