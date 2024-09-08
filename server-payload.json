@@ -10,8 +10,8 @@
         "artist": "The Beatles",
         "title": "Let It Be",
         "files": {
-          "coverArt": "beatles-cover.jpeg",
-          "poster": "beatles-poster.png",
+          "coverArt": "/assets/images/beatles-cover.jpeg",
+          "poster": "/assets/images/beatles-poster.png",
           "audio": "song-1.mp3"
         }
       },
@@ -27,8 +27,8 @@
         "artist": "Imagine Dragons",
         "title": "Radioactive",
         "files": {
-          "coverArt": "imagine-dragons-cover.jpeg",
-          "poster": "imagine-dragons-poster.png",
+          "coverArt": "/assets/images/imagine-dragons-cover.jpeg",
+          "poster": "/assets/images/imagine-dragons-poster.png",
           "audio": "song-2.mp3"
         }
       },
@@ -44,8 +44,8 @@
         "artist": "blink-182",
         "title": "I Miss You",
         "files": {
-          "coverArt": "blink-cover.jpeg",
-          "poster": "blink-182-poster.png",
+          "coverArt": "/assets/images/blink-cover.jpeg",
+          "poster": "/assets/images/blink-182-poster.png",
           "audio": "song-2.mp3"
         }
       },
@@ -61,8 +61,8 @@
         "artist": "Ray Charles",
         "title": "Hit the Road Jack",
         "files": {
-          "coverArt": "ray-cover.jpeg",
-          "poster": "ray-poster.png",
+          "coverArt": "/assets/images/ray-cover.jpeg",
+          "poster": "/assets/images/ray-poster.png",
           "audio": "song-1.mp3"
         }
       },
@@ -78,8 +78,8 @@
         "artist": "Foo Fighters",
         "title": "These Days",
         "files": {
-          "coverArt": "ff-cover.jpeg",
-          "poster": "ff-poster.png",
+          "coverArt": "/assets/images/ff-cover.jpeg",
+          "poster": "/assets/images/ff-poster.png",
           "audio": "song-2.mp3"
         }
       },
@@ -95,8 +95,8 @@
         "artist": "Imagine Dragons",
         "title": "Natural",
         "files": {
-          "coverArt": "imagine-dragons-cover.jpeg",
-          "poster": "imagine-dragons-poster-2.png",
+          "coverArt": "/assets/images/imagine-dragons-cover.jpeg",
+          "poster": "/assets/images/imagine-dragons-poster-2.png",
           "audio": "song-1.mp3"
         }
       }
@@ -111,8 +111,8 @@
         "artist": "Led Zeppelin",
         "title": "Stairway to Heaven (Remaster)",
         "files": {
-          "coverArt": "led-cover.jpeg",
-          "poster": "led-poster.png",
+          "coverArt": "/assets/images/led-cover.jpeg",
+          "poster": "/assets/images/led-poster.png",
           "audio": "song-2.mp3"
         }
       },
@@ -128,8 +128,8 @@
         "artist": "100% The Beatles",
         "title": "Come Together",
         "files": {
-          "coverArt": "beatles-cover.jpeg",
-          "poster": "beatles-poster.png",
+          "coverArt": "/assets/images/beatles-cover.jpeg",
+          "poster": "/assets/images/beatles-poster.png",
           "audio": "song-1.mp3"
         }
       },
@@ -145,8 +145,8 @@
         "artist": "Amy Winehouse",
         "title": "You Know I'm No Good",
         "files": {
-          "coverArt": "amy-cover.jpeg",
-          "poster": "amy-poster.jpeg",
+          "coverArt": "/assets/images/amy-cover.jpeg",
+          "poster": "/assets/images/amy-poster.jpeg",
           "audio": "song-2.mp3"
         }
       },
@@ -162,8 +162,8 @@
         "artist": "Stevie Wonder",
         "title": "I Just Called To Say I Love You",
         "files": {
-          "coverArt": "steve-cover.jpeg",
-          "poster": "steve-poster.png",
+          "coverArt": "/assets/images/steve-cover.jpeg",
+          "poster": "/assets/images/steve-poster.png",
           "audio": "song-1.mp3"
         }
       },
@@ -179,8 +179,8 @@
         "artist": "Genius + Soul - Ray Charles",
         "title": "I've Got a Woman",
         "files": {
-          "coverArt": "ray-cover-2.jpeg",
-          "poster": "ray-poster.png",
+          "coverArt": "/assets/images/ray-cover-2.jpeg",
+          "poster": "/assets/images/ray-poster.png",
           "audio": "song-2.mp3"
         }
       },
@@ -196,8 +196,8 @@
         "artist": "Pink Floyd",
         "title": "Wish You Were Here",
         "files": {
-          "coverArt": "pink-cover.jpeg",
-          "poster": "pink-poster.png",
+          "coverArt": "/assets/images/pink-cover.jpeg",
+          "poster": "/assets/images/pink-poster.png",
           "audio": "song-1.mp3"
         }
       },
