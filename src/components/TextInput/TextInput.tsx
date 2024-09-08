@@ -78,7 +78,7 @@ export const TextInput = ({
       </div>
 
       {showSuggestions && filterSuggestions.length > 0 && (
-        <ul className="absolute max-w-[359px] w-full bg-[#2D2D2D] rounded-[5px] border-none p-[14px] mt-[6px] z-10">
+        <ul className="absolute max-w-[359px] w-full bg-[#2D2D2D] rounded-[5px] border-none p-[14px] mt-[6px] z-20 ">
           {filterSuggestions.map((suggestion, index) => (
             <li
               className="cursor-pointer text-start text-[#D1D1D1]"
