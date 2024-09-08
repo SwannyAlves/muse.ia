@@ -63,7 +63,7 @@ export const TextInput = ({
 
   return (
     <div className="relative w-full">
-      <div className="flex items-center max-w-[359px] w-full gap-2 px-2 py-[7px] rounded-lg bg-[#262626] focus-within:bg-[#404040] transition-colors duration-300">
+      <div className="flex items-center h-9 max-w-[359px] w-full gap-2 px-2 py-[7px] rounded-lg bg-[#262626] focus-within:bg-[#404040] transition-colors duration-300">
         <Image src={ic_search} alt="Search Icon" width={20} height={20} />
         <input
           type="text"
