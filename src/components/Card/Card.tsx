@@ -30,10 +30,10 @@ export const Card = ({
         className={"w-[204px] h-[204px] rounded-t-[5px]"}
       />
 
-      <section className=" flex flex-col gap-[11px] pt-4 pr-4 pb-[19px] pl-4">
+      <section className="flex flex-col gap-[11px] pt-4 pr-4 pb-[19px] pl-4">
         <h1
           className={
-            "font-articulat text-[18px] font-semibold leading-[19px] text-left text-white"
+            "font-articulat text-[18px] font-semibold leading-[19px] text-left text-white whitespace-nowrap overflow-hidden text-ellipsis truncate"
           }
         >
           {title}
@@ -41,7 +41,7 @@ export const Card = ({
         <div className="flex items-center justify-between">
           <p
             className={
-              "font-articulat text-[12px] font-semibold leading-[14px] text-left text-[#666666]"
+              "font-articulat text-[12px] font-semibold leading-[14px] text-left text-[#666666] whitespace-nowrap overflow-hidden text-ellipsis truncate"
             }
           >
             {description}
