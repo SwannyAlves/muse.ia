@@ -3,7 +3,6 @@ import "./globals.css"
 import { FavoritesProvider } from "@/context/FavoritesSongsContext"
 import localFont from "next/font/local"
 import { Header } from "@/components/Header/Header"
-import { TextInput } from "@/components/TextInput/TextInput"
 
 const articulat = localFont({
   src: [
@@ -34,10 +33,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${articulat.className} bg-[#0C0C0C] `}>
-        <FavoritesProvider>
-          <Header />
-          {children}
-        </FavoritesProvider>
+        <FavoritesProvider>{children}</FavoritesProvider>
       </body>
     </html>
   )
