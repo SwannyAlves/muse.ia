@@ -4,7 +4,7 @@ import { HeartIcon } from "../HeartIcon/HeartIcon"
 interface FavoriteButtonProps {
   label?: string
   isFavorite: boolean
-  onClick: () => void
+  onClick: (e: React.MouseEvent) => void
 }
 
 export const FavoriteButton = ({
