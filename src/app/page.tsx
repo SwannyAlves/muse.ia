@@ -6,7 +6,7 @@ import { Header } from "@/components/Header/Header"
 import { TextInput } from "@/components/TextInput/TextInput"
 import { Toggle } from "@/components/Toggle/Toggle"
 import { useFavorites } from "@/context/FavoritesSongsContext"
-import { useMusicLibrary } from "@/hooks/useMusicLibrary "
+import { useMusicLibrary } from "@/hooks/useMusicLibrary"
 import { useRouter } from "next/navigation"
 import { useCallback, useMemo, useState } from "react"
 import { Error } from "@/components/Error/Error"
@@ -41,7 +41,7 @@ export default function Home() {
     }
   }
 
-  if ((error || songsList.length === 0) && !isLoading) return <Error />
+  if (error) return <Error />
   if (isLoading) return <Skeleton />
 
   return (

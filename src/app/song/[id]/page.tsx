@@ -7,7 +7,7 @@ import { useSongById } from "@/hooks/useSongById"
 import { useEffect, useMemo } from "react"
 import { FavoriteButton } from "@/components/FavoriteButton/FavoriteButton"
 import { MusicPlayer } from "@/components/MusicPlayer/MusicPlayer"
-import { useMusicLibrary } from "@/hooks/useMusicLibrary "
+import { useMusicLibrary } from "@/hooks/useMusicLibrary"
 import { Card } from "@/components/Card/Card"
 import { useRouter } from "next/navigation"
 import { Error } from "@/components/Error/Error"
@@ -56,7 +56,7 @@ export default function Song({ params }: SongProps) {
     })
   }, [songsList, songDetails?.relatedAlbums])
 
-  if ((error || !songDetails) && !isLoading) return <Error />
+  if (error) return <Error />
   if (isLoading) return <Skeleton />
 
   return (
