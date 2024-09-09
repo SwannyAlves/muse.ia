@@ -9,6 +9,8 @@ import { useFavorites } from "@/context/FavoritesSongsContext"
 import { useMusicLibrary } from "@/hooks/useMusicLibrary "
 import { useRouter } from "next/navigation"
 import { useCallback, useMemo, useState } from "react"
+import { Error } from "@/components/Error/Error"
+import { Skeleton } from "@/components/Skeleton/Skeleton"
 
 export default function Home() {
   const router = useRouter()
@@ -24,6 +26,8 @@ export default function Home() {
     handleEnterPress,
     handleOrder,
     setSeeFavoriteSongs,
+    error,
+    isLoading,
   } = useMusicLibrary()
 
   const handleSeeFavorite = useCallback(() => {
@@ -36,6 +40,9 @@ export default function Home() {
       toggleFavoriteSongs(id)
     }
   }
+
+  if ((error || songsList.length === 0) && !isLoading) return <Error />
+  if (isLoading) return <Skeleton />
 
   return (
     <>
@@ -54,7 +61,7 @@ export default function Home() {
               />
             </div>
             <p className="font-normal text-[16px] text-[#7f7f7f]">
-              You have {songsList.length} songs in your library
+              You have {songsList?.length} songs in your library
             </p>
           </div>
 
@@ -76,19 +83,19 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-[1152px] w-full flex flex-wrap gap-x-[33px] gap-y-[34px] items-center justify-center xl:justify-start">
-          {songsList.map((song) => (
+          {songsList?.map((song) => (
             <Card
-              key={song.id}
-              title={song.song.title}
-              description={song.song.artist}
-              image={song.song.files.coverArt}
+              key={song?.id}
+              title={song?.song?.title}
+              description={song?.song?.artist}
+              image={song?.song?.files?.coverArt}
               FavoriteButton={
                 <FavoriteButton
-                  isFavorite={favoritesSongs.includes(song.id)}
-                  onClick={handleFavoriteClick(song.id)}
+                  isFavorite={favoritesSongs?.includes(song?.id)}
+                  onClick={handleFavoriteClick(song?.id)}
                 />
               }
-              onClick={() => router.push(`/song/${song.id}`)}
+              onClick={() => router.push(`/song/${song?.id}`)}
             />
           ))}
         </div>

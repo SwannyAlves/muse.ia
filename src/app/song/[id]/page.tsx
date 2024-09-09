@@ -10,6 +10,8 @@ import { MusicPlayer } from "@/components/MusicPlayer/MusicPlayer"
 import { useMusicLibrary } from "@/hooks/useMusicLibrary "
 import { Card } from "@/components/Card/Card"
 import { useRouter } from "next/navigation"
+import { Error } from "@/components/Error/Error"
+import { Skeleton } from "@/components/Skeleton/Skeleton"
 
 export interface SongProps {
   params: {
@@ -26,24 +28,21 @@ export default function Song({ params }: SongProps) {
   const {
     songsList,
     suggestsList,
-    seeFavoriteSongs,
-    changeOrder,
     searchValue,
     handleSearch,
     handleEnterPress,
-    handleOrder,
-    setSeeFavoriteSongs,
   } = useMusicLibrary()
 
   const songDetails = useMemo(() => {
+    if (!song) return null
     return {
-      title: song?.song.title,
-      artist: song?.song.artist,
-      album: song?.song.album,
-      year: song?.song.album.year,
-      coverArt: song?.song.files.coverArt,
-      poster: song?.song.files.poster,
-      audio: song?.song.files.audio,
+      title: song?.song?.title,
+      artist: song?.song?.artist,
+      album: song?.song?.album,
+      year: song?.song?.album?.year,
+      coverArt: song?.song?.files?.coverArt,
+      poster: song?.song?.files?.poster,
+      audio: song?.song?.files?.audio,
       id: song?.id,
       relatedAlbums: song?.related,
     }
@@ -53,9 +52,12 @@ export default function Song({ params }: SongProps) {
     if (!songsList || !songDetails?.relatedAlbums) return []
 
     return songsList.filter((song) => {
-      return songDetails.relatedAlbums?.includes(song.id)
+      return songDetails?.relatedAlbums?.includes(song.id)
     })
-  }, [songsList, songDetails.relatedAlbums])
+  }, [songsList, songDetails?.relatedAlbums])
+
+  if ((error || !songDetails) && !isLoading) return <Error />
+  if (isLoading) return <Skeleton />
 
   return (
     <>
