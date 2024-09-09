@@ -13,12 +13,16 @@ export const useMusicLibrary = () => {
 
   const songsList = useMemo(() => {
     if (!songs || !songs.songs) return []
+    let filteredSongs = [...songs.songs]
+
     if (seeFavoriteSongs) {
-      return songs.songs.filter((songs) => favoritesSongs.includes(songs.id))
+      filteredSongs = filteredSongs.filter((song) =>
+        favoritesSongs.includes(song.id)
+      )
     }
+
     if (changeOrder) {
-      const sortedSongs = [...songs.songs]
-      return sortedSongs.sort((a, b) => {
+      filteredSongs = filteredSongs.sort((a, b) => {
         if (a.song.title > b.song.title) {
           return 1
         }
@@ -28,7 +32,8 @@ export const useMusicLibrary = () => {
         return 0
       })
     }
-    return songs.songs
+
+    return filteredSongs
   }, [songs, seeFavoriteSongs, favoritesSongs, changeOrder])
 
   const suggestsList = useMemo(() => {
