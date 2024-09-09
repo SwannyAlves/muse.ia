@@ -15,7 +15,7 @@ export const Header = ({ children }: HeaderProps) => {
   }, [children])
 
   return (
-    <header className="flex items-center justify-center bg-[#1D1D1D] py-[22px] px-4 xl:px-0 h-20">
+    <header className="flex items-center justify-center bg-[#1D1D1D] py-[22px] px-4 xl:px-0 md:h-20 ">
       <div className={containerClassName}>
         <h1
           className="text-xl font-black bg-clip-text text-transparent bg-gradient-to-b from-[#00F2D5] to-[#AD00FF] hover:cursor-pointer"
