@@ -70,7 +70,7 @@ export default function Song({ params }: SongProps) {
           placeholder="Search in your library"
         />
       </Header>
-      <div className="relative h-full bg-[#12303bf5]">
+      <div className="relative h-full bg-[#12303bf5] min-h-screen">
         <div
           className="absolute top-0 right-0 w-1/2 h-5/6 bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(${songDetails?.coverArt})` }}
