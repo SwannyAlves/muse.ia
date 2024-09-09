@@ -104,7 +104,7 @@ export default function Song({ params }: SongProps) {
 
             {relatedAlbums.length > 0 && (
               <div className="flex flex-col float-start gap-5 max-w-[1152px] w-full">
-                <h3 className="text-white text-base font-medium leading-[19.2px]">
+                <h3 className="text-white text-base font-medium leading-[19.2px] max-w-[1152px] w-full flex flex-wrap gap-x-[33px] gap-y-[34px] items-center justify-center xl:justify-start">
                   Other albums
                 </h3>
                 <div className="max-w-[1152px] w-full flex flex-wrap gap-x-[33px] gap-y-[34px] items-center justify-center xl:justify-start">
