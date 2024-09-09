@@ -139,6 +139,7 @@ export const MusicPlayer = ({
               value={progress}
               onChange={handleProgressChange}
               className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
+              draggable
             />
             <div
               className="absolute top-0 left-0 h-full bg-white rounded-full"
