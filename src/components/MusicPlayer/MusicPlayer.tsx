@@ -54,14 +54,22 @@ export const MusicPlayer = ({
     if (audio) {
       const updateProgress = () => setProgress(audio.currentTime)
       const setAudioDuration = () => setDuration(audio.duration)
+      const handleAudioEnd = () => {
+        setIsPlaying(false)
+        audio.currentTime = 0
+      }
+
       audio.addEventListener("timeupdate", updateProgress)
       audio.addEventListener("loadedmetadata", setAudioDuration)
+      audio.addEventListener("ended", handleAudioEnd)
+
       return () => {
         audio.removeEventListener("timeupdate", updateProgress)
         audio.removeEventListener("loadedmetadata", setAudioDuration)
+        audio.removeEventListener("ended", handleAudioEnd)
       }
     }
-  }, [])
+  }, [audioRef.current])
 
   const formatProgress = useMemo(() => {
     const minutes = Math?.floor(progress / 60)
