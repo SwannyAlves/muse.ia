@@ -21,8 +21,8 @@ const articulat = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "MUSE.is",
-  description: "MUSE.is - A blog about music.",
+  title: "MUSE.ai",
+  description: "MUSE.ai - A blog about music.",
 }
 
 export default function RootLayout({
